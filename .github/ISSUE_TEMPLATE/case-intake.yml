@@ -1,0 +1,82 @@
+name: Drone repair case intake
+description: Submit a board-level drone failure, diagnostic case, or repair outcome
+title: "[CASE] Manufacturer model — short symptom"
+labels:
+  - case-intake
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing. Do not include serial numbers, addresses, private messages, or third-party images without permission.
+  - type: input
+    id: platform
+    attributes:
+      label: Aircraft or device
+      description: Manufacturer, model, and variant
+      placeholder: DJI Mini 1
+    validations:
+      required: true
+  - type: input
+    id: assembly
+    attributes:
+      label: Module or board
+      placeholder: Main logic board, top side, board revision if known
+  - type: textarea
+    id: history
+    attributes:
+      label: Fault history
+      description: What happened before the fault, including impacts, water, repairs, or voltage injection
+    validations:
+      required: true
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: Current symptoms
+      description: Lights, sounds, current draw, app errors, heat, communications, or visible damage
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: Tests and repair attempts
+      description: Include instruments, test points, reference, settings, current limits, readings, and units
+  - type: textarea
+    id: markings
+    attributes:
+      label: Board and component markings
+      description: Transcribe markings exactly; state uncertain characters explicitly
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence available
+      description: Describe overview photos, macro photos, logs, measurements, donor boards, or schematics. Attach only material you may share.
+  - type: dropdown
+    id: permission
+    attributes:
+      label: Permission
+      description: What may this project publish?
+      options:
+        - Anonymous technical details and my original evidence
+        - Anonymous technical details only
+        - Contact me before publishing anything
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Present outcome
+      options:
+        - Not diagnosed
+        - Diagnosed, not repaired
+        - Repair attempted, unsuccessful
+        - Repair successful
+        - Inconclusive
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I removed personal identifiers and have permission to share every attachment.
+          required: true
